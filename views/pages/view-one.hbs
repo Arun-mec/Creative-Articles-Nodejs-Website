@@ -1,0 +1,31 @@
+<section>
+    <div class="container mt-3">
+        <div class="card mt-3">
+            <div class="row">
+                <div class="cols-md-12 cols-sm-12 cols-xs-12">
+                    <img src="/blog-images/{{blog._id}}.jpg" class="img-fluid" alt="" style="height:35rem;width:100%;object-fit:cover;">
+                </div>
+
+                <div class="col">
+                    
+                    <div class="card-block m-4">
+                        <span class="ms-auto">27- 10- 2021</span>
+                        <span><a href=""><i class="bi bi-heart float-end ps-3"></i></a></span>
+                        <span><a href="/"><i class="bi bi-chat-left float-end ps-3"></i></a></span>
+                        <span><a href=""><i class="bi bi-three-dots float-end"></i></a></span>
+
+                        <h1 class="card-title">{{blog.title}}</h1>
+                        <p class="card-text">{{blog.blog}}</p>
+                    
+
+                        <hr>
+                        <p class="d-inline">Likes {{blog.likes}}</p>
+                        <p class="d-inline">Comments {{blog.comments.length}}</p>
+                        
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

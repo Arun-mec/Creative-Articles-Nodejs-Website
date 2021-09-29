@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row m-5">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 m-auto p-3 signup">
+            <form action="/pages/addarticle" method="post" role="form" enctype="multipart/form-data">
+                <h2><b>Add your article</b></h2>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="Enter your title">
+                    <span id="title" class="title"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="caption">Caption</label>
+                    <input type="text" class="form-control" name="caption" id="caption" maxlength="30" placeholder="Enter your caption">
+                </div>
+
+                <div class="form-group">
+                    <label for="blog">Article</label>
+                    <textarea type="text" class="form-control description" name="blog" id="blog" rows="6"></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="topic">Topic</label>
+                    <span>
+                        <select name="topic">
+                            <option value="Travel" name="Travel" selected="selected">Travel</option>
+                            <option value="Food" name="Food">Food</option>
+                            <option value="Culture" name="Culture">Culture</option>
+                            <option value="Music" name="Music">Music</option>
+                            <option value="Literature" name="Literature">Literature</option>
+                            <option value="Art" name="Art">Art</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="form-group mt-3">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="Price" placeholder="Image">
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-outline-dark">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

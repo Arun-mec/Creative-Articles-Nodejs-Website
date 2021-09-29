@@ -1,0 +1,37 @@
+<section>
+    <div class="container-md mt-3">
+        {{#each blogs}}
+        <div class="card mt-3">
+            <div class="row no-gutters ">
+                <div class="col-auto d-xs-none d-sm-none d-md-block">
+                    <img src="/blog-images/{{this._id}}.jpg" class="img-fluid" alt="" style="height:25rem;width:40rem;object-fit:cover;">
+                </div>
+
+                <div class="col">
+                    
+                    <div class="card-block m-4">
+                        <span class="ms-auto">27- 10- 2021</span>
+                        <span><a href=""><i class="bi bi-heart float-end ps-3"></i></a></span>
+                        <span><a href="/"><i class="bi bi-chat-left float-end ps-3"></i></a></span>
+                        <span><a href=""><i class="bi bi-three-dots float-end"></i></a></span>
+
+                        <a href="/view-blog/{{this._id}}"><h1 class="card-title">{{this.title}}
+                        </h1></a>
+                        <p class="card-text">{{this.caption}}...
+                            <a href="/view-blog/{{this._id}}">View more</a>
+                        </p>
+                    
+
+                        <hr>
+                        <p class="d-inline">Likes {{this.likes}}</p>
+                        <p class="d-inline">Comments {{this.comments.length}}</p>
+                        
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</section>

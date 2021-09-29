@@ -1,0 +1,49 @@
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+    <div class="card p-4">
+        <div class=" image d-flex flex-column justify-content-center align-items-center"> 
+            <button class="btn btn-secondary"> 
+                <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button> 
+                <span class="name mt-3">{{userDetails.f_name}}</span> 
+
+            <div class="d-flex flex-row justify-content-center align-items-center gap-2"> 
+                <span class="idd1">{{userDetails._id}}</span> <span><i class="fa fa-copy"></i></span> </div>
+            
+            <div class=" d-flex mt-2"> <a class="btn btn-outline-dark m-2">Edit Profile</a>
+            <a class="btn btn-outline-dark m-2" href="/pages/addarticle">Add an article</a> </div>
+
+            <div class="text mt-3"> <span>{{userDetails.caption}}</span> </div>
+            <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"> 
+                <span><i class="bi bi-instagram"></i></i></span> <span><i class="bi bi-facebook"></i></i></span> 
+                <span><i class="bi bi-twitter"></i></i></span> <span><i class="bi bi-linkedin"></i></span> </div>
+                <div class=" d-flex mt-2"> <button class="btn btn-outline-danger mt-5">Sign Out</button> </div>
+        </div>
+        <hr>
+    <span class="m-3">Your Uploads</span>
+    <div class="card m-3 mt-3">
+            <div class="row no-gutters ">
+                <div class="col-auto d-xs-none d-sm-none d-md-block">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg" class="img-fluid" alt="" style="height:25rem;width:40rem">
+                </div>
+
+                <div class="col">
+                    <div class="card-block m-4">
+                        <span class="ms-auto">@7- 10- 2021</span>
+                        <span><a href=""><i class="bi bi-heart float-end ps-3"></i></a></span>
+                        <span><a href="/"><i class="bi bi-chat-left float-end ps-3"></i></a></span>
+                        <span><a href=""><i class="bi bi-three-dots float-end"></i></a></span>
+
+                        <h1 class="card-title">Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                        </h1>
+                        <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed ...
+                            <a href="/">View more</a>
+                        </p>
+
+                        <hr>
+                        <p class="d-inline">Likes {{this.likes}}</p>
+                        <p class="d-inline">Comments !2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
