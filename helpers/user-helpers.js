@@ -20,8 +20,8 @@ module.exports={
             let user = await db.get().collection(collection.USER_COLLECTION).findOne({email:userDetails.email})
 
             if (user){
-                console.log(userDetails)
-                console.log(user);
+                // console.log(userDetails)
+                // console.log(user);
                 bcrypt.compare(userDetails.password,user.password).then((status)=>{
                     console.log(status)
                 if (status){
@@ -48,5 +48,11 @@ module.exports={
             resolve(userDetails)
         })
         
+    },
+    getUserBlogs:(userId)=>{
+        return new Promise(async(resolve,reject)=>{
+            let blogs=db.get().collection(collection.BLOG_COLLECTION).findOne({userId:objectId(userId)})
+            resolve(blogs)
+        })
     }
 }

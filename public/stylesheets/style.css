@@ -22,10 +22,9 @@ body {
 }
 
 .container {
-  max-width: 100% !important;
+  max-width: 80% !important;
   overflow-x: hidden !important;
 }
-
 
 a{
   text-decoration: none;

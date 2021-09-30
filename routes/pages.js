@@ -29,7 +29,8 @@ router.post('/addarticle',(req,res)=>{
         userId:objectId(userId),
         likes :0,
         comments:[],
-        admin_status:false
+        admin_status:false,
+        date:new Date()
     } 
     blogDetails = Object.assign(req.body,admin_object)
     // console.log(blogDetails)

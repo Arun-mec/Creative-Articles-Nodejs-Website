@@ -72,8 +72,10 @@ router.get('/profile/:id', async(req,res)=>{
     let userId = req.params.id;
 
     let userDetails = await userHelpers.getUserDetails(userId)
+    let blogs = await userHelpers.getUserBlogs(userId)
     // console.log(userDetails)
-    res.render('user/profile',{user:true,userDetails:userDetails,partials:true})
+    // console.log(userDetails)
+    res.render('user/profile',{user:true,userDetails:userDetails,blogDetails:blogs,partials:true})
 })
 
 module.exports=router

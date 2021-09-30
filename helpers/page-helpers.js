@@ -34,7 +34,7 @@ module.exports={
     getAllTopicBlogs:(topic)=>{
         return new Promise(async(resolve,reject)=>{
             let blogs= await db.get().collection(collection.BLOG_COLLECTION).find({topic:topic}).toArray()
-            console.log(blogs)
+            // console.log(blogs)
             resolve(blogs)
         })
     }
