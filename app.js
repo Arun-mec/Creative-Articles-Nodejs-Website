@@ -7,8 +7,6 @@ var logger = require('morgan');
 const hbs = require('express-handlebars')
 var session = require('express-session')
 
-
-
 if (process.env.NODE_ENV !== 'production'){
   require('dotenv').config()
 }
@@ -35,18 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload())
-app.set('trust proxy', 1);
-app.use(session({
-  cookie:{
-      secure: true,
-      maxAge:60000
-         },
-  store: new RedisStore(),
-  secret: 'secret',
-  saveUninitialized: true,
-  resave: false
-  }));
-  
+app.use(session({secret:"Key",resave: true,
+saveUninitialized: true,cookie:{maxAge:600000}}))
+
 db.connect(function (err){
   if (err) console.log("Connection Error");
   else console.log("Connection Established");

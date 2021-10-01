@@ -17,12 +17,13 @@ const verifyLogin=(req,res,next)=>{
 }
 
 router.get('/addarticle',verifyLogin,(req,res)=>{  
-    user=req.session.user;
+    user=req.session.user._id;
+    console.log(user)
     // console.log(user)
-    res.render('pages/addarticle',{user:user})
+    res.render('pages/addarticle',{user})
 })
 
-router.post('/addarticle',(req,res)=>{
+router.post('/addarticle/:id',(req,res)=>{
     // console.log(req.files)
     userId = req.params.id
     admin_object={

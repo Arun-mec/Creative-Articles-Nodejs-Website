@@ -51,7 +51,7 @@ module.exports={
     },
     getUserBlogs:(userId)=>{
         return new Promise(async(resolve,reject)=>{
-            let blogs=db.get().collection(collection.BLOG_COLLECTION).findOne({userId:objectId(userId)})
+            let blogs=db.get().collection(collection.BLOG_COLLECTION).find({userId:objectId(userId)}).toArray()
             resolve(blogs)
         })
     }
