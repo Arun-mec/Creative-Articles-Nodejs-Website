@@ -14,7 +14,7 @@ body {
   margin: 0;
   padding: 0;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: auto !important;
   font-size: 1.5em;
   font-family: 'Athiti', sans-serif;
   background-color: #ffffff;
@@ -22,20 +22,20 @@ body {
 }
 
 .container {
-  max-width: 80% !important;
+  max-width: 100% !important;
   overflow-x: hidden !important;
 }
 
 a{
   text-decoration: none;
-  color: pink;
+  color: black;
 }
 .btn{
   border-radius:0.75rem;
 }
 .banner{
-  background-image: url("../images/banner.jpg");
-  height:20rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("../images/banner.jpg"); 
+  height:50rem;
   background-size: cover;
 
 
