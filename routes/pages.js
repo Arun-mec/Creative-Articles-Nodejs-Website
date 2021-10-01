@@ -18,20 +18,22 @@ const verifyLogin=(req,res,next)=>{
 
 router.get('/addarticle',verifyLogin,(req,res)=>{  
     user=req.session.user._id;
-    console.log(user)
     // console.log(user)
+    
     res.render('pages/addarticle',{user})
 })
 
 router.post('/addarticle/:id',(req,res)=>{
     // console.log(req.files)
+    var date = new Date()
     userId = req.params.id
     admin_object={
         userId:objectId(userId),
         likes :0,
         comments:[],
         admin_status:false,
-        date:new Date()
+        date: date.toISOString().slice(0,10)
+        
     } 
     blogDetails = Object.assign(req.body,admin_object)
     // console.log(blogDetails)
@@ -74,5 +76,20 @@ router.get('/art',async(req,res)=>{
     let topic="Art"
     let blogs = await pageHelpers.getAllTopicBlogs(topic)
     res.render('pages/view-topic',{blogs})
+})
+
+router.post('/add-like',verifyLogin,(req,res)=>{
+    blogId = req.body.blogId
+    pageHelpers.addLike(blogId).then((response)=>{
+        res.json({status:true})
+    })
+})
+
+router.post('/add-comment',verifyLogin,(req,res)=>{
+    console.log(req.body);
+    console.log("hello")
+    user=req.session.user._id
+    console.log(user)
+    // console.log(blogId)
 })
 module.exports=router

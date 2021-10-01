@@ -1,6 +1,7 @@
 var db=require('../config/connection')
 var collection=require('../config/collections')
 var objectId= require('mongodb').ObjectId
+const { response } = require('../app')
 
 module.exports={
     addArticle:(blogDetails)=>{
@@ -36,6 +37,17 @@ module.exports={
             let blogs= await db.get().collection(collection.BLOG_COLLECTION).find({topic:topic}).toArray()
             // console.log(blogs)
             resolve(blogs)
+        })
+    },
+    addLike:(blogId)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.BLOG_COLLECTION).updateOne({_id:objectId(blogId)},{
+                $inc:{
+                    'likes':1
+                }
+            }).then((response)=>{
+                resolve(response)
+            })
         })
     }
 }
