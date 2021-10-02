@@ -16,7 +16,7 @@
                        
 
                         <h1 class="card-title p-5">{{blog.title}}</h1>
-                        <p class="card-text">{{blog.blog}}</p>
+                        <div class="content-div"><p class="card-text m-3">{{blog.blog}}</p></div>
                     
 
                         <hr>
@@ -24,9 +24,19 @@
 
                         <form action="#" id="comment-form" method="POST" enctype="application/x-www-form-urlencoded">
                         <div class="form-group">
-                        <input type="text" class="form-control" name="pincode" id="pincode" placeholder="add a comment...">
+                        <input type="text" class="form-control" name="comment" id="comment" placeholder="add a comment..." onclick="doLogin()">
+                        <input type="text" class="form-control" name="blogId" id="blogId" value="{{blog._id}}" hidden>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Post</button>
+
+                        <hr>
+                         {{#each blog.comments}}
+                        <div>
+                            <span>{{this.user}} : {{this.comment}} </span>
+                        </div>
+                        <hr>    
+                        {{/each}}
+                        
                         
                     </div>
     
@@ -44,7 +54,9 @@
         method:'post',
         data:$('#comment-form').serialize(),
         success:(response)=>{
-            alert("Success")
+            if (response.status){
+                location.reload()
+            }
         }
     })
     })

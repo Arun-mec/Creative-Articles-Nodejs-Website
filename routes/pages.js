@@ -85,11 +85,21 @@ router.post('/add-like',verifyLogin,(req,res)=>{
     })
 })
 
+router.post('/verify-login',(req,res)=>{
+    
+    if (req.session.loggedIn){
+        console.log("True");
+    }else{
+        res.json({status:true,url:req.body.url})
+        console.log("False");
+    }
+})
+
 router.post('/add-comment',verifyLogin,(req,res)=>{
-    console.log(req.body);
-    console.log("hello")
-    user=req.session.user._id
-    console.log(user)
-    // console.log(blogId)
+    // console.log(req.body);
+    user = req.session.user
+    pageHelpers.addComment(req.body,user).then((response)=>{
+        res.json({status:true})
+    })
 })
 module.exports=router

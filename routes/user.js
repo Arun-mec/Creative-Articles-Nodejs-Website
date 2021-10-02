@@ -44,10 +44,11 @@ router.get('/signin',(req,res)=>{
     if(req.session.loggedIn){
         res.redirect('/')
     }else{
+        
         res.render('user/signin',{"Error":req.session.loginError,partials:true})
         req.session.loginError=false
   }
-})
+}) 
 
 router.post('/signin',(req,res)=>{
     userHelpers.doLogin(req.body).then((response)=>{

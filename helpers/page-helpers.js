@@ -49,5 +49,19 @@ module.exports={
                 resolve(response)
             })
         })
+    },
+    addComment:(commentObj,user)=>{
+        return new Promise((resolve,response)=>{
+
+            db.get().collection(collection.BLOG_COLLECTION).updateOne({_id:objectId(commentObj.blogId)}, 
+            { $push:{
+                    comments :{
+                        user:user.f_name,
+                        comment:commentObj.comment
+                    }
+            }}).then((response)=>{
+                resolve(response)
+            })
+        })
     }
 }

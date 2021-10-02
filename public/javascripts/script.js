@@ -17,3 +17,19 @@ function addLike(blogId){
     })  
 }
 
+function doLogin(){
+    url=window.location.href
+    $.ajax({
+        url:'/pages/verify-login',
+        method:'post',
+        data:{
+            url:url
+        },
+        success:(response)=>{
+            if(response.status){
+                // alert("Im her")
+                console(response)
+            }}
+    })  
+    
+}
