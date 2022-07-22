@@ -15,7 +15,7 @@ const verifyLogin=(req,res,next)=>{
 
 /* GET users listing. */
 //  returning index page
-router.get('/',async(req, res)=>{
+router.get('/',async (req, res)=>{
   let user= req.session.user;
   let blogs= await pageHelpers.getBlogs()
   // console.log(blogs)

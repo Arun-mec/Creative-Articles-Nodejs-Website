@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var fileUpload=require('express-fileupload')
 var logger = require('morgan');
 const hbs = require('express-handlebars')
-var session = require('express-session')
+var session = require('cookie-session')
 
 if (process.env.NODE_ENV !== 'production'){
   require('dotenv').config()
