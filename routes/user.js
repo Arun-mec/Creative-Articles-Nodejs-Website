@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userHelpers = require('./helpers/user-helpers')
+var userHelpers = require('../helpers/user-helpers')
 const { application } = require('express');
 
 
