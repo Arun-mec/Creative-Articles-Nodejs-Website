@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var pageHelpers = require('../helpers/page-helpers')
+var pageHelpers = require('./helpers/page-helpers')
 var objectId = require('mongodb').ObjectId
 
 //middleware

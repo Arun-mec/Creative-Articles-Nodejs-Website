@@ -1,7 +1,7 @@
 const { ObjectId } = require('bson');
 var objectId =require('mongodb').ObjectId
 var express = require('express');
-var pageHelpers = require('../helpers/page-helpers')
+var pageHelpers = require('./helpers/page-helpers')
   
 
 var router = express.Router();
