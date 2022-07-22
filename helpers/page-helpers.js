@@ -1,7 +1,7 @@
 var db=require('../config/connection')
 var collection=require('../config/collections')
 var objectId= require('mongodb').ObjectId
-const { response } = require('./app')
+const { response } = require('../app')
 
 module.exports={
     addArticle:(blogDetails)=>{
